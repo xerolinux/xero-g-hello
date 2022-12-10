@@ -6,10 +6,10 @@ pkgrel=1
 pkgdesc='Welcome screen for XeroLinux'
 arch=('x86_64')
 license=(GPLv3)
-url="https://github.com/xerolinux/xero-g-hello"
+url="https://github.com/xerolinux/xero-g-hello.git"
 depends=('gtk3' 'glib2')
 makedepends=('meson' 'git' 'mold' 'rustup' 'clang')
-source=("${pkgname}::git+$url.git")
+source=("${pkgname}::git+$url")
 sha512sums=('SKIP')
 #provides=('xerowelcome')
 replaces=('xerolinux-tool' 'xerolinux-tool-dev' 'xerowelcome')
@@ -38,7 +38,7 @@ package() {
   export RUSTFLAGS="-Cembed-bitcode -C opt-level=3 -Ccodegen-units=1 -Clinker=clang -C link-arg=-flto -Clink-arg=-fuse-ld=/usr/bin/mold"
   DESTDIR="${pkgdir}" meson install
 
-  cp "$pkgdir/usr/share/applications/$pkgname.desktop" "$pkgdir/usr/share/applications/system-tool.desktop"
+  cp "$pkgdir/usr/share/applications/xerowelcome.desktop" "$pkgdir/usr/share/xerowelcome.desktop"
 
   install -Dvm644 ../$pkgname.desktop \
     "$pkgdir/etc/skel/.config/autostart/$pkgname.desktop"
