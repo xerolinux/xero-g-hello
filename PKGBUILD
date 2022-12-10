@@ -2,7 +2,7 @@
 
 pkgname=xero-g-hello
 pkgver=1.0.0
-pkgrel=2
+pkgrel=3
 pkgdesc='Welcome screen for XeroLinux'
 arch=('x86_64')
 license=(GPLv3)
@@ -11,7 +11,7 @@ depends=('gtk3' 'glib2')
 makedepends=('meson' 'git' 'mold' 'rustup' 'clang')
 source=("${pkgname}::git+$url")
 sha512sums=('SKIP')
-#provides=('xerowelcome')
+provides=('xerowelcome')
 replaces=('xerolinux-tool' 'xerolinux-tool-dev')
 options=(strip)
 
@@ -42,6 +42,7 @@ package() {
 
   install -Dvm644 ../xerowelcome.desktop \
     "$pkgdir/etc/skel/.config/autostart/$pkgname.desktop"
+  rm "$pkgdir/usr/share/xerowelcome.desktop"
 }
 
 # vim:set sw=2 sts=2 et:
