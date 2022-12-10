@@ -2,7 +2,7 @@
 
 pkgname=xero-g-hello
 pkgver=1.0.0
-pkgrel=1
+pkgrel=2
 pkgdesc='Welcome screen for XeroLinux'
 arch=('x86_64')
 license=(GPLv3)
@@ -12,7 +12,7 @@ makedepends=('meson' 'git' 'mold' 'rustup' 'clang')
 source=("${pkgname}::git+$url")
 sha512sums=('SKIP')
 #provides=('xerowelcome')
-replaces=('xerolinux-tool' 'xerolinux-tool-dev' 'xerowelcome')
+replaces=('xerolinux-tool' 'xerolinux-tool-dev')
 options=(strip)
 
 build() {
