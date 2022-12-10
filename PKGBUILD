@@ -40,7 +40,7 @@ package() {
 
   cp "$pkgdir/usr/share/applications/xerowelcome.desktop" "$pkgdir/usr/share/xerowelcome.desktop"
 
-  install -Dvm644 ../$pkgname.desktop \
+  install -Dvm644 ../xerowelcome.desktop \
     "$pkgdir/etc/skel/.config/autostart/$pkgname.desktop"
 }
 
