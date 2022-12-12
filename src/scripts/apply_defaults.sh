@@ -64,11 +64,8 @@ case $CHOICE in
       echo "###################################"
       sleep 2
       cp -rf /etc/skel/. ~
-      cd ~ && git clone https://github.com/xerolinux/default-grub.git
-      cd ~/default-grub/ && sudo ./install.sh
-      rm -rf ~/default-grub
-      dconf load /org/gnome/ < /etc/skel/.config/xero-dconf.conf &
-      notify-send "XeroG settings applied Please reboot! 🔥"
+      rm ~/.config/autostart/dconf-load.desktop
+      sh /usr/local/bin/xdconf
       sleep 2
       echo "##################################"
       echo "  Done! Reboot to Apply Settings  "

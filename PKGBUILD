@@ -2,7 +2,7 @@
 
 pkgname=xero-g-hello
 pkgver=1.0.1
-pkgrel=2
+pkgrel=3
 pkgdesc='Welcome screen for XeroLinux'
 arch=('x86_64')
 license=(GPLv3)
@@ -41,7 +41,7 @@ package() {
   cp "$pkgdir/usr/share/applications/xerowelcome.desktop" "$pkgdir/usr/share/xerowelcome.desktop"
 
   install -Dvm644 ../xerowelcome.desktop \
-    "$pkgdir/etc/skel/.config/autostart/$pkgname.desktop"
+    "$pkgdir/etc/skel/.config/autostart/xerowelcome.desktop"
   rm "$pkgdir/usr/share/xerowelcome.desktop"
 }
 
