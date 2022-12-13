@@ -1,8 +1,8 @@
 # Maintainer: Vladislav Nepogodin <nepogodin.vlad@gmail.com>
 
 pkgname=xero-g-hello
-pkgver=1.0.1
-pkgrel=3
+pkgver=1.0.2
+pkgrel=1
 pkgdesc='Welcome screen for XeroLinux'
 arch=('x86_64')
 license=(GPLv3)
